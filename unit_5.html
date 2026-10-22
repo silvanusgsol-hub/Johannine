@@ -1,0 +1,795 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Unit V: The Towel and the Empty Tomb · Johannine Writings</title>
+<meta name="description" content="From the upper room to the garden tomb: Jesus prepares his community, goes to the cross as king, rises and sends his disciples.">
+<style>
+:root{
+  --paper:#fbf8f2; --card:#ffffff; --ink:#1f1b16; --muted:#5f574c; --line:#e3dccf;
+  --ok:#1f7a4d; --ok-bg:#e6f4ec; --bad:#b3261e; --bad-bg:#fbeae8; --part:#8a5a00; --part-bg:#fff3d6;
+  --focus:#1a5fd0;
+  --accent:#6b2a7a;--accent-ink:#fff;--tint:#f1e7f4;--hero-bg:linear-gradient(135deg,#3a0f2b,#2c1a5a);--hero-ink:#fbf2ff;--motif:linear-gradient(90deg,transparent 48%,rgba(255,255,255,.07) 48% 52%,transparent 52%),linear-gradient(0deg,transparent 60%,rgba(255,255,255,.07) 60% 64%,transparent 64%);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#15130f; --card:#1f1c17; --ink:#f2ece2; --muted:#b8ae9f; --line:#3a352d;
+    --ok:#6fd3a0; --ok-bg:#16301f; --bad:#ff8a80; --bad-bg:#3a1a17; --part:#f2c66d; --part-bg:#382b10;
+    --focus:#8ab4ff;
+    --accent:#d9a6ff;--accent-ink:#22082e;--tint:#2c1f35;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#15130f; --card:#1f1c17; --ink:#f2ece2; --muted:#b8ae9f; --line:#3a352d;
+  --ok:#6fd3a0; --ok-bg:#16301f; --bad:#ff8a80; --bad-bg:#3a1a17; --part:#f2c66d; --part-bg:#382b10;
+  --focus:#8ab4ff;
+  --accent:#d9a6ff;--accent-ink:#22082e;--tint:#2c1f35;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+h1,h2,h3,.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;line-height:1.25}
+a{color:var(--accent)}
+button,select,input,textarea{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+#chtitle:focus{outline:none}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+/* top bar */
+.top{position:sticky;top:0;z-index:5;background:var(--card);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:56px;flex-wrap:wrap;padding-top:6px;padding-bottom:6px}
+.home{font-weight:600;text-decoration:none;color:var(--ink);display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border:1px solid var(--line);border-radius:999px;font-size:14px}
+.home:hover{border-color:var(--accent)}
+.unitname{font-weight:600;font-size:15px;flex:1;min-width:140px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.stat{font-size:14px;color:var(--muted);white-space:nowrap}
+.stat b{color:var(--ink)}
+.bar{height:6px;background:var(--line);width:100%}
+.bar>i{display:block;height:100%;width:0;background:var(--accent);transition:width .35s ease}
+/* hero */
+.hero{background:var(--hero-bg);color:var(--hero-ink);position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:var(--motif);opacity:.5;pointer-events:none}
+.hero .wrap{position:relative;padding-top:40px;padding-bottom:40px}
+.kicker{text-transform:uppercase;letter-spacing:.14em;font-size:12px;font-weight:700;opacity:.85}
+.hero h1{font-size:clamp(30px,6vw,46px);margin:.25em 0 .2em}
+.hero p.sub{font-size:18px;margin:0;opacity:.92;max-width:640px}
+.numeral{position:absolute;right:8px;bottom:-30px;font-family:Georgia,serif;font-size:180px;line-height:1;opacity:.12;font-weight:700;pointer-events:none}
+main{padding:24px 0 56px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:0 1px 2px rgba(0,0,0,.04)}
+.card+.card{margin-top:16px}
+.grid2>.card{margin-top:0}
+.mission{border-left:5px solid var(--accent)}
+.mission h2{margin-top:0}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+@media (max-width:640px){.grid2{grid-template-columns:1fr}}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:0;margin:8px 0 0;list-style:none}
+.chips li{background:var(--tint);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font-size:14px}
+ul.plain{padding-left:20px;margin:.4em 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:10px 20px;border-radius:10px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);font-weight:600;cursor:pointer;text-decoration:none}
+.btn:hover{filter:brightness(1.07)}
+.btn[disabled]{opacity:.45;cursor:not-allowed;filter:none}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn.ghost:hover{border-color:var(--accent)}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;align-items:center}
+/* challenge */
+.badge{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent);background:var(--tint);padding:4px 10px;border-radius:999px}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.lesson{font-size:13px;color:var(--muted)}
+.ch h2{font-size:24px;margin:.5em 0 .3em}
+.instr{color:var(--muted);margin:0 0 14px;font-size:15px}
+.prompt{margin:0 0 14px}
+.clue{background:var(--tint);border-radius:10px;padding:12px 14px;margin:0 0 14px;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:17px}
+.opts{display:grid;gap:10px}
+.opt{display:flex;align-items:flex-start;gap:12px;text-align:left;width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);cursor:pointer;min-height:48px}
+.opt:hover:not([disabled]){border-color:var(--accent)}
+.opt .key{flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--tint);font-weight:700;font-size:14px}
+.opt[aria-pressed="true"]{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent) inset}
+.opt.right{border-color:var(--ok);background:var(--ok-bg)}
+.opt.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.opt.partial{border-color:var(--part);background:var(--part-bg)}
+.opt[disabled]{cursor:default}
+/* sequence */
+ol.seq{list-style:none;padding:0;margin:0;display:grid;gap:8px;counter-reset:s}
+ol.seq li{display:flex;align-items:center;gap:10px;padding:10px 10px 10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);counter-increment:s}
+ol.seq li::before{content:counter(s);flex:none;width:28px;height:28px;border-radius:50%;display:grid;place-items:center;background:var(--tint);font-weight:700;font-size:14px}
+ol.seq li .txt{flex:1}
+ol.seq li.dragging{opacity:.5}
+ol.seq li.right{border-color:var(--ok);background:var(--ok-bg)}
+ol.seq li.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.mv{display:flex;flex-direction:column;gap:4px}
+.mv button{width:40px;height:30px;border:1px solid var(--line);border-radius:8px;background:var(--paper);cursor:pointer;font-size:14px}
+.mv button:hover:not([disabled]){border-color:var(--accent)}
+.mv button[disabled]{opacity:.35;cursor:default}
+.handle{cursor:grab;color:var(--muted);user-select:none;padding:0 2px}
+/* match & build */
+.mrow{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);gap:10px;align-items:center;padding:10px 0;border-bottom:1px dashed var(--line)}
+.mrow:last-child{border-bottom:0}
+@media (max-width:640px){.mrow{grid-template-columns:1fr}}
+.mrow .l{font-weight:600}
+select{width:100%;min-height:44px;padding:8px 10px;border:1.5px solid var(--line);border-radius:10px;background:var(--card)}
+select.right{border-color:var(--ok);background:var(--ok-bg)}
+select.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.fix{font-size:14px;color:var(--ok);margin-top:4px}
+.build{display:grid;gap:10px}
+.slot{border:1.5px dashed var(--accent);border-radius:12px;padding:10px 12px;background:var(--tint)}
+.slot .lab{font-weight:700;font-size:14px;margin-bottom:6px;font-family:"Iowan Old Style",Palatino,Georgia,serif}
+.chiasm .slot{margin-left:calc(var(--d,0) * 9%)}
+@media (max-width:640px){.chiasm .slot{margin-left:calc(var(--d,0) * 5%)}}
+.timeline .slot{position:relative;margin-left:22px}
+.timeline .slot::before{content:"";position:absolute;left:-17px;top:16px;width:10px;height:10px;border-radius:50%;background:var(--accent)}
+.timeline{border-left:3px solid var(--line);padding-left:4px}
+/* sort */
+.sortlist{display:grid;gap:10px}
+.sitem{border:1.5px solid var(--line);border-radius:10px;padding:10px 12px;background:var(--card)}
+.sitem.right{border-color:var(--ok);background:var(--ok-bg)}
+.sitem.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.sitem .t{margin-bottom:8px}
+.cats{display:flex;flex-wrap:wrap;gap:6px}
+.cat{min-height:38px;padding:6px 12px;border-radius:999px;border:1.5px solid var(--line);background:var(--paper);cursor:pointer;font-size:14px}
+.cat[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.cat[disabled]{cursor:default}
+.tally{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 12px}
+.tally span{font-size:13px;border:1px solid var(--line);border-radius:999px;padding:3px 10px;background:var(--tint)}
+/* fill */
+.scroll{background:var(--scroll-bg,var(--tint));border:1px solid var(--line);border-radius:12px;padding:16px;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:18px}
+.fillrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.fillrow input{flex:1;min-width:200px;min-height:44px;padding:8px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card)}
+.fillrow input.right{border-color:var(--ok);background:var(--ok-bg)}
+.fillrow input.wrong{border-color:var(--bad);background:var(--bad-bg)}
+.hint{margin-top:10px;font-size:15px;color:var(--part)}
+/* branch */
+.scen{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:14px}
+.scen .tag{background:var(--tint);padding:6px 12px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.scen .body{padding:12px 14px}
+.srcnote{border-left:4px solid var(--accent);background:var(--tint);padding:10px 14px;border-radius:0 10px 10px 0;margin-top:12px;font-size:15px}
+details{margin-top:12px}
+summary{cursor:pointer;font-weight:600}
+.other{margin:8px 0 0;padding-left:18px}
+.other li{margin-bottom:6px}
+/* reflect */
+textarea{width:100%;min-height:140px;padding:10px 12px;border:1.5px solid var(--line);border-radius:10px;background:var(--card);resize:vertical}
+.count{font-size:14px;color:var(--muted);margin-top:6px}
+.model{background:var(--tint);border-radius:10px;padding:12px 14px;margin-top:10px}
+/* feedback */
+.fb{margin-top:18px;border-radius:12px;padding:14px 16px;border:1.5px solid}
+.fb.ok{border-color:var(--ok);background:var(--ok-bg)}
+.fb.bad{border-color:var(--bad);background:var(--bad-bg)}
+.fb.part{border-color:var(--part);background:var(--part-bg)}
+.fb.note{border-color:var(--accent);background:var(--tint)}
+.fb h3{margin:0 0 6px;font-size:19px}
+.fb .src{font-size:13px;color:var(--muted);margin-top:8px}
+.fb p{margin:.4em 0}
+/* results */
+.score-big{font-size:clamp(44px,10vw,72px);font-weight:700;line-height:1;font-family:Georgia,serif;color:var(--accent)}
+.rank{font-size:26px;margin:.2em 0}
+table.res{width:100%;border-collapse:collapse;margin-top:10px;font-size:15px}
+table.res td{padding:8px 6px;border-bottom:1px solid var(--line);vertical-align:top}
+table.res td.n{width:36px;color:var(--muted)}
+table.res td.s{width:72px;text-align:right;font-weight:600;white-space:nowrap}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:0 16px 30px}
+
+</style>
+</head>
+<body>
+<header class="top" role="banner">
+  <div class="wrap">
+    <a class="home" href="index.html" aria-label="Back to all unit games">&#8962; All units</a>
+    <span class="unitname" id="unitname"></span>
+    <span class="stat" id="stat-progress" aria-live="polite"></span>
+    <span class="stat" id="stat-score"></span>
+  </div>
+  <div class="bar" aria-hidden="true"><i id="bar"></i></div>
+</header>
+<div id="app"></div>
+<footer>Johannine Writings · Master of Divinity · Global School of Open Learning. Questions and answers are drawn from the course guide by Joe Thomas.</footer>
+<script>
+window.UNIT = {
+  num: 5, roman: "V",
+  title: "The Towel and the Empty Tomb",
+  subtitle: "From the upper room to the garden tomb: Jesus prepares his community, goes to the cross as king, rises and sends his disciples.",
+  lessons: [{n:9, t:"The Cleansing and Instruction of the New Covenant Community (13–17)"}, {n:10, t:"The Passion Narrative, the Resurrection Appearances, the Commissioning of Jesus’s Disciples and Conclusion (18–20)"}],
+  missionTitle: "Your mission: from the upper room to the garden",
+  mission: [
+    "Mathew has just been made a church leader. At his first meeting a member says, “At last, someone with authority!” That evening Mathew reads John 13 and sees Jesus with a towel around his waist.",
+    "In this game you walk the final chapters of the Gospel. Recline at the table in the upper room, listen to Jesus’s instructions and prayer, follow him from the garden through the trials to the cross, and stand at the empty tomb when Mary hears her name."
+  ],
+  ranks: [
+    {min:90, title:"Sent One", desc:"“As the Father has sent me, I am sending you.” You have followed the whole journey from towel to tomb."},
+    {min:75, title:"Beloved Disciple", desc:"You stayed close through the upper room and the cross. Review the challenges you missed."},
+    {min:55, title:"Disciple Behind Locked Doors", desc:"You know the main scenes. Review Sections 9.4–9.5 and 10.1–10.2 and try again."},
+    {min:0, title:"Watcher by the Fire", desc:"Like Peter in the courtyard, you are still near. Reread the Lesson at a Glance for Lessons 9 and 10, then play again."}
+  ],
+  next: {href:"unit_6.html", label:"Unit VI game"},
+  closing: "Lesson 10 ends: the letters of John were written to a church under strain. The Unit VI game opens those letters.",
+  challenges: [
+    {
+      type:"sequence", lesson:9, section:"9.1–9.10",
+      title:"The night in the upper room",
+      prompt:"Put these scenes of John 13–17 in order.",
+      items:[
+        "Jesus washes the disciples’ feet (13:1–20)",
+        "Jesus, troubled in spirit, announces his betrayal (13:21–30)",
+        "With Judas gone, Jesus gives the new command and foretells Peter’s denials (13:31–38)",
+        "Jesus promises “another” Paraclete (chap. 14)",
+        "“I am the true vine” (15:1–17)",
+        "Jesus warns of the world’s hatred (15:18–16:4)",
+        "Jesus prays for himself: “Glorify your Son” (17:1–5)",
+        "Jesus prays for all who will believe through the disciples’ message (17:20–26)"
+      ],
+      explain:"Verse 13:1 sets the scene for the whole Farewell Discourse: “Having loved his own who were in the world, he loved them to the end.” Love is its major theme."
+    },
+    {
+      type:"mcq", lesson:9, section:"9.1",
+      title:"What the towel means",
+      clue:"“I have set you an example that you should do as I have done for you” (13:15).",
+      prompt:"According to the lesson, how should the church take Jesus’s footwashing?",
+      options:[
+        {t:"As an emblem of lowering oneself to meet another’s need, whatever it may be", ok:true},
+        {t:"As a sacrament the church must institute and repeat", why:"The lesson says this would institutionalise what Jesus meant only as an example of an attitude."},
+        {t:"As a hygiene rule for first-century guests", why:"Footwashing was common hospitality, but Jesus’s act teaches far more."},
+        {t:"As a sign that leaders should never exercise authority", why:"Jesus says, “You call me ‘Teacher’ and ‘Lord’, and rightly so.” He redefines authority as service."}
+      ],
+      explain:"Rabbinic sources considered the task too menial even for disciples, which makes Jesus’s act more remarkable. He did it knowing Judas would betray him, and he washed Judas’s feet too."
+    },
+    {
+      type:"fill", lesson:9, section:"9.4",
+      title:"Another helping Presence",
+      before:"No English word captures <i>paraklētos</i> exactly. The lesson suggests the Spirit is best described as another helping",
+      after:", replacing Jesus’s presence with the disciples: “he lives with you and will be in you” (14:17).",
+      answers:["presence","Presence"],
+      hint:"It describes what Jesus himself was while he was with the disciples."
+    },
+    {
+      type:"match", lesson:9, section:"9.4",
+      title:"What the Spirit will do",
+      prompt:"Match each work of the Spirit to its reference in the Farewell Discourse.",
+      heads:["The Spirit will…","Reference"],
+      pairs:[
+        ["live with you and be in you","14:17"],
+        ["remind you of everything Jesus said","14:26"],
+        ["testify about Jesus, together with his followers","15:26–27"],
+        ["convict the world","16:7–11"],
+        ["guide you into all the truth","16:13"]
+      ],
+      explain:"The Spirit is sent by the Father and by Jesus, and his role is not to exalt himself but to exalt Christ. “It is for your good that I am going away” (16:7)."
+    },
+    {
+      type:"sort", lesson:9, section:"9.5",
+      title:"Two vines",
+      prompt:"Sort each statement: does it belong to Israel as God’s vineyard in Isaiah 5, or to Jesus the true vine in John 15?",
+      cats:["Isaiah 5: God’s vineyard, Israel","John 15: Jesus, the true vine"],
+      items:[
+        {t:"The owner dug it up, cleared it of stones and planted choice vines", c:0},
+        {t:"He looked for good grapes, but it yielded only bad fruit", c:0},
+        {t:"The vine is Israel, God’s chosen people", c:0},
+        {t:"The vine is Jesus himself, the new Israel", c:1},
+        {t:"The Father is the gardener who prunes the branches", c:1},
+        {t:"Branches bear fruit only by remaining in the vine", c:1},
+        {t:"“I chose you … that you might go and bear fruit, fruit that will last”", c:1}
+      ],
+      explain:"John does not teach a replacement theology in which the church becomes the vine. Jesus is the vine. Faith in him is decisive for membership in the people of God, made up of believing Jews and Gentiles."
+    },
+    {
+      type:"build", lesson:9, section:"9.8–9.10",
+      title:"The shape of Jesus’s prayer",
+      prompt:"Jesus prays first for himself, then for his disciples, then for later believers. Fill each slot of John 17.",
+      layout:"timeline",
+      slots:[
+        {label:"17:1 · How Jesus addresses God", answer:"“Father”"},
+        {label:"17:1–5 · Jesus prays for himself", answer:"Glorify your Son, that your Son may glorify you"},
+        {label:"17:11 · How Jesus addresses God", answer:"“Holy Father”"},
+        {label:"17:6–19 · Jesus prays for his disciples", answer:"Protect them in the world, keep them one, sanctify them by the truth"},
+        {label:"17:20–26 · Jesus prays for later believers", answer:"That all may be one, so that the world may believe"},
+        {label:"17:25 · How Jesus addresses God", answer:"“Righteous Father”"}
+      ],
+      extra:["“Our Father in heaven”","Take them out of the world"],
+      explain:"Jesus prays not that God would take his followers out of the world, but that he would protect them in it (17:15). Unity, together with love, is an essential prerequisite for evangelism."
+    },
+    {
+      type:"sequence", lesson:10, section:"10.1",
+      title:"From the garden to the tomb",
+      prompt:"Put the scenes of John’s Passion Narrative in order.",
+      items:[
+        "In the garden Jesus says “I am he”, and the arresting party falls back (18:6)",
+        "An informal hearing before Annas, Caiaphas’s father-in-law (18:12–24)",
+        "Pilate: “What is truth?” (18:38)",
+        "The crowd chooses Barabbas instead of Jesus",
+        "Flogged and crowned with thorns, Jesus is presented: “Here is the man!” (19:5)",
+        "The chief priests: “We have no king but Caesar” (19:15)",
+        "On the cross: “It is finished” (19:30)",
+        "Joseph of Arimathea and Nicodemus bury Jesus in a new garden tomb"
+      ],
+      explain:"Only John records the hearing before Annas, names Malchus and Peter at the arrest, and mentions Nicodemus at the burial, signs of eyewitness testimony (19:35)."
+    },
+    {
+      type:"match", lesson:10, section:"10.1–10.2",
+      title:"Who said it?",
+      prompt:"Match each saying to the person who said it.",
+      heads:["Saying","Speaker"],
+      pairs:[
+        ["“What is truth?”","Pilate"],
+        ["“We have no king but Caesar”","The chief priests"],
+        ["“If I spoke the truth, why did you strike me?”","Jesus, before Annas"],
+        ["“I have seen the Lord!”","Mary Magdalene"],
+        ["“My Lord and my God!”","Thomas"],
+        ["“As the Father has sent me, I am sending you”","The risen Jesus"]
+      ],
+      extra:["Peter","Caiaphas"],
+      explain:"Thomas’s confession is the climax of the Gospel’s confessions."
+    },
+    {
+      type:"branch", lesson:10, section:"10.1",
+      title:"Ruth’s Sunday school question",
+      scenario:"Ruth teaches Sunday school. A child asks, “Why did Jesus not fight back when the soldiers came?” Ruth realises she has never read the arrest scene closely.",
+      prompt:"Which answer reflects John’s account best?",
+      options:[
+        {t:"“Jesus was in charge the whole time. He stepped forward himself, told Peter to put away his sword, and chose to drink the cup the Father gave him. His kingdom is not of this world.”", score:1,
+         outcome:"This is John’s picture: Jesus, “knowing all that was going to happen to him” (18:4), takes the initiative throughout. His non-retaliation flows from his otherworldly kingship."},
+        {t:"“There were too many soldiers. He had no choice.”", score:0,
+         outcome:"The lesson names this as a misconception: “Jesus was a victim of circumstances.” When Jesus says “I am he”, the arresting party draws back and falls to the ground."},
+        {t:"“Because fighting is always wrong.”", score:0.5,
+         outcome:"Partly true to the scene, since Jesus does rebuke Peter’s sword. But it misses the lesson’s point: Jesus chose the cross in obedience to the Father, as a king whose kingdom is not of this world."}
+      ],
+      source:"Lesson 10 says the major theme of John’s Passion Narrative is the otherworldly kingship of Jesus, “hence his policy of non-retaliation”, with Jesus in control throughout. The child’s question comes from the opening story; Ruth’s answers are imagined."
+    },
+    {
+      type:"mcq", lesson:10, section:"10.2",
+      title:"The first witness",
+      clue:"Mary Magdalene is the first person to see the risen Lord. She hears her name, cries “Rabboni!”, and then announces to the disciples, “I have seen the Lord!”",
+      prompt:"Why does the lesson call this “highly significant”?",
+      options:[
+        {t:"In that culture women were not considered legitimate legal witnesses", ok:true},
+        {t:"She was the only disciple who knew the way to the tomb", why:"Peter and the other disciple ran to the tomb too."},
+        {t:"She recognised Jesus immediately", why:"She first thought he was the gardener (20:15)."},
+        {t:"She was the mother of one of the Twelve", why:"The lesson does not say this."}
+      ],
+      explain:"Choosing a woman, and one with a checkered past (Luke 8:2), as the first witness ran against the expectations of the age."
+    },
+    {
+      type:"mcq", lesson:10, section:"10.2",
+      title:"He breathed on them",
+      clue:"“And with that he breathed on them and said, ‘Receive the Holy Spirit’” (20:22).",
+      prompt:"How does the lesson interpret this act?",
+      options:[
+        {t:"A symbolic gesture forming the new covenant community, like God breathing life into the first man; the Spirit is poured out at Pentecost", ok:true},
+        {t:"The full outpouring of the Spirit, replacing Pentecost", why:"The lesson says this conclusion would be premature and at odds with Acts 1–2."},
+        {t:"A sign that the disciples now had power to originate forgiveness", why:"The lesson says the community has declarative, not originating, power to forgive."},
+        {t:"A private blessing given only to Peter", why:"It is given to the gathered disciples."}
+      ],
+      explain:"The commissioning formally establishes the new messianic community that will go forward in the Spirit’s power, proclaiming forgiveness of sins in Jesus’s name."
+    },
+    {
+      type:"fill", lesson:10, section:"10.2",
+      title:"Lord and God",
+      before:"When John wrote, the title “Lord and God” (<i>Dominus et Deus</i>) was applied to the Roman emperor",
+      after:"(A.D. 81–96). Thomas’s confession carries a countercultural message: Jesus alone is Lord and God.",
+      answers:["Domitian","domitianus"],
+      hint:"The same emperor’s reign helps date the Gospel (Lesson 1) and is linked with John’s exile on Patmos."
+    },
+    {
+      type:"reflect", lesson:9, section:"9.1",
+      title:"Taking the towel",
+      context:"A church member told Mathew, “At last, someone with authority!” Then Mathew read John 13.",
+      prompt:"How would you explain to that member what authority looks like in Jesus’s community? Name one way you could “take the towel” this week.",
+      minWords:35,
+      model:"Jesus, who rightly is “Teacher” and “Lord”, took a towel and did a task considered too menial even for disciples, washing feet, including the feet of the one who would betray him. Authority in his community is shown in humble service: “no servant is greater than his master” (13:16). Footwashing is not a ritual to institute but an emblem of lowering oneself to meet another’s need, whatever it may be. Jesus acted from love, not from legalism, guilt or obligation (13:1), and set an example for how believers treat one another, so that the world may see their love.",
+      checklist:["show that Jesus kept his authority but expressed it as service?","treat footwashing as an attitude rather than a ritual?","name a concrete need you could meet?"]
+    }
+  ]
+};
+
+</script>
+<script>
+(function(){
+"use strict";
+var U = window.UNIT;
+var app = document.getElementById('app');
+var TYPES = {
+  mcq:{label:'Narrative Detective',icon:'🔍',instr:'Study the clue, then choose the best answer. The options are shuffled every time.'},
+  sequence:{label:'Story Sequencer',icon:'⇅',instr:'Put the cards in order. Use the arrow buttons (or drag a card on a computer), then press Check order.'},
+  match:{label:'Theme & Character Matcher',icon:'⇄',instr:'Choose the matching answer for every row, then press Check matches.'},
+  sort:{label:'Arrange the Evidence',icon:'🗂',instr:'Place every card in a category by pressing a category button, then press Check sorting.'},
+  branch:{label:'Choose Your Path',icon:'🛤',instr:'Read the situation and choose how you would respond. Each path shows its consequence.'},
+  fill:{label:'Unlock the Scroll',icon:'📜',instr:'Type the missing word or phrase. Spelling variants and close wording are accepted. You have two tries.'},
+  build:{label:'Build the Story',icon:'🏛',instr:'Fill every slot of the structure from the drop-down lists, then press Check structure.'},
+  reflect:{label:'Reflection Challenge',icon:'✍',instr:'Write a short response in your own words. You then see a model response and a checklist from the course to compare with your own.'}
+};
+var state = null;
+var lastPos = -1;
+
+function shuffle(a){a=a.slice();for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}return a;}
+function el(tag, attrs){
+  var n=document.createElement(tag);
+  if(attrs){for(var k in attrs){var v=attrs[k]; if(v==null||v===false) continue;
+    if(k==='text') n.textContent=v; else if(k==='html') n.innerHTML=v;
+    else if(k==='class') n.className=v; else if(k.slice(0,2)==='on') n.addEventListener(k.slice(2),v);
+    else n.setAttribute(k, v===true?'':v);}}
+  for(var i=2;i<arguments.length;i++){var c=arguments[i]; if(c==null) continue;
+    if(Array.isArray(c)) c.forEach(function(x){ if(x!=null) n.appendChild(typeof x==='string'?document.createTextNode(x):x);});
+    else n.appendChild(typeof c==='string'?document.createTextNode(c):c);}
+  return n;
+}
+function fmt(x){ return (Math.round(x*100)/100).toString(); }
+function total(){ return state.scores.reduce(function(a,b){return a+(b||0);},0); }
+function storeKey(){ return 'jw-games-unit-'+U.num+'-best'; }
+function getBest(){ try{ var v=localStorage.getItem(storeKey()); return v?JSON.parse(v):null; }catch(e){ return null; } }
+function setBest(pct){ try{ var b=getBest(); if(!b||pct>b.pct) localStorage.setItem(storeKey(), JSON.stringify({pct:pct,date:new Date().toISOString().slice(0,10)})); }catch(e){} }
+
+function header(){
+  document.getElementById('unitname').textContent = 'Unit '+U.roman+' · '+U.title;
+  var n=U.challenges.length;
+  var p=document.getElementById('stat-progress'), s=document.getElementById('stat-score'), bar=document.getElementById('bar');
+  if(!state||state.i<0){ p.textContent=n+' challenges'; s.textContent=''; bar.style.width='0%'; return; }
+  var done = state.scores.filter(function(x){return x!=null;}).length;
+  if(state.i>=n){ p.innerHTML='<b>Complete</b>'; }
+  else p.innerHTML='Challenge <b>'+(state.i+1)+'</b> of '+n;
+  s.innerHTML='Score <b>'+fmt(total())+'</b> / '+n;
+  bar.style.width=(done/n*100)+'%';
+}
+
+function hero(){
+  return el('section',{class:'hero'}, el('div',{class:'wrap'},
+    el('div',{class:'kicker',text:'Unit '+U.roman+' game · Lessons '+U.lessons.map(function(l){return l.n;}).join(' & ')}),
+    el('h1',{text:U.title}), el('p',{class:'sub',text:U.subtitle}),
+    el('div',{class:'numeral','aria-hidden':'true',text:U.roman})));
+}
+
+function intro(){
+  state = {i:-1, scores:U.challenges.map(function(){return null;}), detail:[]};
+  header();
+  app.innerHTML='';
+  var types={}; U.challenges.forEach(function(c){types[c.type]=1;});
+  var best=getBest();
+  var m = el('main',null, el('div',{class:'wrap'},
+    el('section',{class:'card mission'},
+      el('h2',{text:U.missionTitle}),
+      U.mission.map(function(p){return el('p',{text:p});}),
+      el('div',{class:'actions'},
+        el('button',{class:'btn',id:'start',onclick:function(){go(0);}},'Begin the mission →'),
+        best?el('span',{class:'stat',text:'Your best so far: '+best.pct+'%'}):null)),
+    el('div',{class:'grid2',style:'margin-top:16px'},
+      el('section',{class:'card'}, el('h3',{text:'Lessons in this game'}),
+        el('ul',{class:'plain'}, U.lessons.map(function(l){return el('li',null, el('b',{text:'Lesson '+l.n+': '}), l.t);})),
+        el('h3',{text:'Activity types'}),
+        el('ul',{class:'chips'}, Object.keys(TYPES).filter(function(t){return types[t];}).map(function(t){return el('li',{text:TYPES[t].icon+' '+TYPES[t].label});}))),
+      el('section',{class:'card'}, el('h3',{text:'How scoring works'}),
+        el('ul',{class:'plain'},
+          el('li',{text:'There are '+U.challenges.length+' challenges, each worth 1 point.'}),
+          el('li',{text:'Choice questions and paths: 1 point for the best answer. Some paths earn half a point when they are partly right.'}),
+          el('li',{text:'Sequencing, matching, sorting and building: your whole answer is checked at once, and you earn credit for each item placed correctly.'}),
+          el('li',{text:'Unlock the Scroll: 1 point on the first try, half a point on the second.'}),
+          el('li',{text:'Reflections earn a completion point. They are not marked for quality; compare your answer with the model response.'}),
+          el('li',{text:'Answers lock once you submit. Play again to reshuffle everything and start from zero.'}))))
+  ));
+  app.appendChild(hero()); app.appendChild(m);
+  window.scrollTo(0,0);
+}
+
+function go(i){
+  state.i=i; header();
+  if(i>=U.challenges.length){ results(); return; }
+  var c=U.challenges[i], T=TYPES[c.type];
+  app.innerHTML='';
+  var body=el('div');
+  var fbSlot=el('div',{'aria-live':'polite'});
+  var card=el('section',{class:'card ch'},
+    el('div',{class:'meta'}, el('span',{class:'badge'}, T.icon+' '+T.label), el('span',{class:'lesson',text:'Lesson '+c.lesson+(c.section?' · Section '+c.section:'')})),
+    el('h2',{tabindex:'-1',id:'chtitle',text:c.title}),
+    el('p',{class:'instr',text:c.instr||T.instr}),
+    body, fbSlot);
+  app.appendChild(el('main',null, el('div',{class:'wrap'}, card)));
+  var finish=function(score, verdictClass, verdictText, extra){
+    state.scores[i]=score; header();
+    var fb=el('div',{class:'fb '+verdictClass},
+      el('h3',{text:verdictText+(c.type==='reflect'?'':' · '+fmt(score)+' / 1')}),
+      extra||null,
+      c.explain?el('p',{html:c.explain}):null,
+      c.section?el('div',{class:'src',text:'Source: course guide, Lesson '+c.lesson+', Section '+c.section+'.'}):null);
+    var last=(i===U.challenges.length-1);
+    var nxt=el('button',{class:'btn',onclick:function(){go(i+1);}}, last?'See my results →':'Next challenge →');
+    fbSlot.appendChild(fb); fbSlot.appendChild(el('div',{class:'actions'},nxt));
+    nxt.focus({preventScroll:true});
+    fb.scrollIntoView({behavior:'smooth',block:'nearest'});
+  };
+  R[c.type](c, body, finish);
+  window.scrollTo(0,0);
+  var t=document.getElementById('chtitle'); if(t) t.focus({preventScroll:true});
+}
+function verdict(score){
+  if(score>=0.999) return ['ok','Correct'];
+  if(score>0) return ['part','Partly correct'];
+  return ['bad','Not quite'];
+}
+
+var R={};
+/* ---------- MCQ ---------- */
+R.mcq=function(c, body, finish){
+  if(c.clue) body.appendChild(el('div',{class:'clue',html:c.clue}));
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:'<b>'+c.prompt+'</b>'}));
+  var opts=c.options.map(function(o,k){return {t:o.t, ok:!!o.ok, why:o.why, k:k};});
+  var sh, tries=0;
+  do{ sh=shuffle(opts); tries++; }while(tries<12 && sh.findIndex(function(o){return o.ok;})===lastPos);
+  lastPos = sh.findIndex(function(o){return o.ok;});
+  var box=el('div',{class:'opts',role:'group','aria-label':'Answer options'});
+  var btns=[];
+  sh.forEach(function(o,idx){
+    var b=el('button',{class:'opt',type:'button'}, el('span',{class:'key',text:String.fromCharCode(65+idx)}), el('span',{text:o.t}));
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.disabled=true;});
+      b.setAttribute('aria-pressed','true');
+      btns.forEach(function(x,j){ if(sh[j].ok) x.classList.add('right'); });
+      if(!o.ok) b.classList.add('wrong');
+      var right=sh.filter(function(x){return x.ok;})[0];
+      var v=verdict(o.ok?1:0);
+      var extra=el('div',null,
+        o.ok?null:el('p',{html:'The answer is <b>'+escapeHtml(right.t)+'</b>.'}),
+        o.why?el('p',{html:'<i>About your choice:</i> '+o.why}):null);
+      finish(o.ok?1:0, v[0], v[1], extra);
+    });
+    btns.push(b); box.appendChild(b);
+  });
+  body.appendChild(box);
+};
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+
+/* ---------- SEQUENCE ---------- */
+R.sequence=function(c, body, finish){
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:c.prompt}));
+  var items=c.items.map(function(t,k){return {t:t,k:k};});
+  var order; var g=0;
+  do{ order=shuffle(items); g++; }while(g<20 && order.every(function(o,j){return o.k===j;}));
+  var ol=el('ol',{class:'seq','aria-label':'Cards to put in order'});
+  var locked=false, dragK=null;
+  function draw(focusK, dir){
+    ol.innerHTML='';
+    order.forEach(function(o,j){
+      var up=el('button',{type:'button','aria-label':'Move up: '+o.t, disabled:(j===0||locked)?true:null, onclick:function(){move(j,-1);}},'▲');
+      var dn=el('button',{type:'button','aria-label':'Move down: '+o.t, disabled:(j===order.length-1||locked)?true:null, onclick:function(){move(j,1);}},'▼');
+      var li=el('li',{draggable:locked?null:'true','data-k':o.k},
+        el('span',{class:'handle','aria-hidden':'true',text:'☰'}), el('span',{class:'txt',text:o.t}), el('span',{class:'mv'},up,dn));
+      if(!locked){
+        li.addEventListener('dragstart',function(e){dragK=o.k;li.classList.add('dragging'); try{e.dataTransfer.setData('text/plain',String(o.k));}catch(x){} });
+        li.addEventListener('dragend',function(){li.classList.remove('dragging');dragK=null;});
+        li.addEventListener('dragover',function(e){e.preventDefault();});
+        li.addEventListener('drop',function(e){e.preventDefault(); if(dragK==null) return;
+          var from=order.findIndex(function(x){return x.k===dragK;}), to=order.findIndex(function(x){return x.k===o.k;});
+          if(from<0||to<0||from===to) return; var it=order.splice(from,1)[0]; order.splice(to,0,it); draw();});
+      }
+      if(o.res) li.classList.add(o.res);
+      ol.appendChild(li);
+      if(focusK===o.k){ var target=(dir<0?up:dn); if(target.disabled) target=(dir<0?dn:up); setTimeout(function(){target.focus();},0); }
+    });
+  }
+  function move(j,d){ var k=j+d; if(k<0||k>=order.length) return; var t=order[j]; order[j]=order[k]; order[k]=t; draw(t.k,d); }
+  draw();
+  body.appendChild(ol);
+  var chk=el('button',{class:'btn',type:'button'},'Check order');
+  chk.addEventListener('click',function(){
+    locked=true; chk.disabled=true;
+    var right=0; order.forEach(function(o,j){ o.res=(o.k===j)?'right':'wrong'; if(o.k===j) right++; });
+    draw();
+    var score=right/order.length, v=verdict(score);
+    var extra=el('div',null, el('p',{text:right+' of '+order.length+' cards are in the correct position.'}),
+      score<1?el('div',null, el('p',{html:'<b>Correct order:</b>'}), el('ol',{class:'plain'}, c.items.map(function(t){return el('li',{text:t});}))):null);
+    finish(score, v[0], v[1], extra);
+  });
+  body.appendChild(el('div',{class:'actions'},chk));
+};
+
+/* ---------- MATCH ---------- */
+R.match=function(c, body, finish){
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:c.prompt}));
+  var rows=shuffle(c.pairs.map(function(p,k){return {l:p[0], r:p[1], k:k};}));
+  var rights=c.pairs.map(function(p){return p[1];}).concat(c.extra||[]);
+  var sels=[];
+  var box=el('div');
+  if(c.heads) box.appendChild(el('div',{class:'mrow','aria-hidden':'true'}, el('div',{class:'lesson',text:c.heads[0]}), el('div',{class:'lesson',text:c.heads[1]})));
+  rows.forEach(function(r,idx){
+    var id='m'+idx;
+    var s=el('select',{id:id}, el('option',{value:'',text:'Choose…'}), shuffle(rights).map(function(t){return el('option',{value:t,text:t});}));
+    s.addEventListener('change',check);
+    sels.push(s);
+    box.appendChild(el('div',{class:'mrow'}, el('label',{class:'l','for':id,text:r.l}), el('div',null,s)));
+  });
+  body.appendChild(box);
+  var chk=el('button',{class:'btn',type:'button',disabled:true},'Check matches');
+  var note=el('span',{class:'stat'});
+  function check(){ var filled=sels.filter(function(s){return s.value;}).length; chk.disabled=filled<sels.length; note.textContent=filled+' of '+sels.length+' chosen'; }
+  check();
+  chk.addEventListener('click',function(){
+    chk.disabled=true; var right=0;
+    sels.forEach(function(s,idx){ s.disabled=true; var ok=s.value===rows[idx].r; if(ok){right++; s.classList.add('right');} else { s.classList.add('wrong'); s.parentNode.appendChild(el('div',{class:'fix',text:'✓ '+rows[idx].r})); } });
+    var score=right/rows.length, v=verdict(score);
+    finish(score, v[0], v[1], el('p',{text:right+' of '+rows.length+' matches are correct.'}));
+  });
+  body.appendChild(el('div',{class:'actions'},chk,note));
+};
+
+/* ---------- BUILD ---------- */
+R.build=function(c, body, finish){
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:c.prompt}));
+  var bank=c.slots.map(function(s){return s.answer;}).concat(c.extra||[]);
+  var uniq=bank.filter(function(x,i){return bank.indexOf(x)===i;});
+  var wrap=el('div',{class:'build '+(c.layout||'')});
+  var sels=[];
+  c.slots.forEach(function(s,idx){
+    var id='b'+idx;
+    var sel=el('select',{id:id}, el('option',{value:'',text:'Choose…'}), shuffle(uniq).map(function(t){return el('option',{value:t,text:t});}));
+    sel.addEventListener('change',upd);
+    sels.push(sel);
+    var slot=el('div',{class:'slot',style:s.depth!=null?('--d:'+s.depth):null}, el('label',{class:'lab','for':id,text:s.label}), sel);
+    wrap.appendChild(slot);
+  });
+  body.appendChild(wrap);
+  var chk=el('button',{class:'btn',type:'button',disabled:true},'Check structure');
+  var note=el('span',{class:'stat'});
+  function upd(){ var f=sels.filter(function(s){return s.value;}).length; chk.disabled=f<sels.length; note.textContent=f+' of '+sels.length+' slots filled'; }
+  upd();
+  chk.addEventListener('click',function(){
+    chk.disabled=true; var right=0;
+    sels.forEach(function(s,idx){ s.disabled=true; var ok=s.value===c.slots[idx].answer; if(ok){right++; s.classList.add('right');} else { s.classList.add('wrong'); s.parentNode.appendChild(el('div',{class:'fix',text:'✓ '+c.slots[idx].answer})); } });
+    var score=right/sels.length, v=verdict(score);
+    finish(score, v[0], v[1], el('p',{text:right+' of '+sels.length+' slots are correct.'}));
+  });
+  body.appendChild(el('div',{class:'actions'},chk,note));
+};
+
+/* ---------- SORT ---------- */
+R.sort=function(c, body, finish){
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:c.prompt}));
+  var items=shuffle(c.items.map(function(it,k){return {t:it.t, c:it.c, k:k, pick:null};}));
+  var tally=el('div',{class:'tally','aria-live':'polite'});
+  body.appendChild(tally);
+  var list=el('div',{class:'sortlist'});
+  var groups=[];
+  items.forEach(function(it,idx){
+    var btns=c.cats.map(function(cat,ci){
+      var b=el('button',{type:'button',class:'cat','aria-pressed':'false'},cat);
+      b.addEventListener('click',function(){ it.pick=ci; btns.forEach(function(x,j){x.setAttribute('aria-pressed',j===ci?'true':'false');}); upd(); });
+      return b;
+    });
+    var row=el('div',{class:'sitem'}, el('div',{class:'t',text:it.t}), el('div',{class:'cats',role:'group','aria-label':'Category for: '+it.t}, btns));
+    groups.push({row:row,btns:btns,it:it});
+    list.appendChild(row);
+  });
+  body.appendChild(list);
+  var chk=el('button',{class:'btn',type:'button',disabled:true},'Check sorting');
+  var note=el('span',{class:'stat'});
+  function upd(){
+    var f=items.filter(function(x){return x.pick!=null;}).length;
+    chk.disabled=f<items.length; note.textContent=f+' of '+items.length+' placed';
+    tally.innerHTML=''; c.cats.forEach(function(cat,ci){ tally.appendChild(el('span',{text:cat+': '+items.filter(function(x){return x.pick===ci;}).length})); });
+  }
+  upd();
+  chk.addEventListener('click',function(){
+    chk.disabled=true; var right=0;
+    groups.forEach(function(g){ g.btns.forEach(function(b){b.disabled=true;}); var ok=g.it.pick===g.it.c; if(ok){right++; g.row.classList.add('right');} else { g.row.classList.add('wrong'); g.row.appendChild(el('div',{class:'fix',text:'✓ Belongs in: '+c.cats[g.it.c]})); } });
+    var score=right/items.length, v=verdict(score);
+    finish(score, v[0], v[1], el('p',{text:right+' of '+items.length+' cards are in the right category.'}));
+  });
+  body.appendChild(el('div',{class:'actions'},chk,note));
+};
+
+/* ---------- FILL ---------- */
+function norm(s){
+  return String(s).toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')
+    .replace(/[‘’“”"'`]/g,'').replace(/[^a-z0-9]+/g,' ').trim()
+    .replace(/^(the|a|an) /,'').trim();
+}
+function accepted(input, answers){
+  var n=norm(input); if(!n) return false;
+  return answers.some(function(a){ var na=norm(a); if(n===na) return true;
+    var re=new RegExp('(^| )'+na.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+'( |$)');
+    return re.test(n) && n.length<=na.length+18; });
+}
+R.fill=function(c, body, finish){
+  var scroll=el('div',{class:'scroll'}, el('span',{html:c.before}), el('b',{text:' ______ '}), el('span',{html:c.after||''}));
+  body.appendChild(scroll);
+  var inp=el('input',{type:'text',id:'fillin',autocomplete:'off',autocapitalize:'off',spellcheck:'false','aria-label':'Your answer'});
+  var btn=el('button',{class:'btn',type:'button'},'Unlock');
+  var hintBox=el('div',{'aria-live':'polite'});
+  body.appendChild(el('label',{'for':'fillin',class:'sr',text:'Your answer'}));
+  body.appendChild(el('div',{class:'fillrow'},inp,btn));
+  body.appendChild(hintBox);
+  var tries=0;
+  function submit(){
+    if(!inp.value.trim()) { inp.focus(); return; }
+    tries++;
+    if(accepted(inp.value, c.answers)){
+      inp.classList.add('right'); inp.disabled=true; btn.disabled=true;
+      var sc=tries===1?1:0.5, v=verdict(sc);
+      finish(sc, v[0], tries===1?'Scroll unlocked':'Unlocked on the second try', el('p',{html:'Accepted answer: <b>'+escapeHtml(c.answers[0])+'</b>'}));
+    } else if(tries===1){
+      inp.classList.add('wrong');
+      hintBox.innerHTML=''; hintBox.appendChild(el('div',{class:'hint',html:'🔑 Not yet. Hint: '+c.hint+' You have one more try.'}));
+      inp.focus(); inp.select();
+    } else {
+      inp.disabled=true; btn.disabled=true;
+      finish(0,'bad','The scroll stays sealed', el('p',{html:'The answer is <b>'+escapeHtml(c.answers[0])+'</b>.'}));
+    }
+  }
+  btn.addEventListener('click',submit);
+  inp.addEventListener('keydown',function(e){ if(e.key==='Enter'){ e.preventDefault(); submit(); } });
+  inp.addEventListener('input',function(){ inp.classList.remove('wrong'); });
+};
+
+/* ---------- BRANCH ---------- */
+R.branch=function(c, body, finish){
+  body.appendChild(el('div',{class:'scen'}, el('div',{class:'tag',text:'Hypothetical scenario · based on the lesson’s opening story'}), el('div',{class:'body',html:c.scenario})));
+  if(c.prompt) body.appendChild(el('p',{class:'prompt',html:'<b>'+c.prompt+'</b>'}));
+  var opts=shuffle(c.options.map(function(o,k){return {t:o.t,outcome:o.outcome,score:o.score,k:k};}));
+  var box=el('div',{class:'opts'}); var btns=[];
+  opts.forEach(function(o,idx){
+    var b=el('button',{class:'opt',type:'button'}, el('span',{class:'key',text:String.fromCharCode(65+idx)}), el('span',{text:o.t}));
+    b.addEventListener('click',function(){
+      btns.forEach(function(x){x.disabled=true;}); b.setAttribute('aria-pressed','true');
+      btns.forEach(function(x,j){ if(opts[j].score>=1) x.classList.add('right'); });
+      if(o.score<1) b.classList.add(o.score>0?'partial':'wrong');
+      var v=o.score>=1?['ok','A path the lesson supports']:(o.score>0?['part','A partly helpful path']:['bad','A path the lesson warns against']);
+      var others=opts.filter(function(x){return x!==o;});
+      var extra=el('div',null, el('p',{html:'<b>Consequence:</b> '+o.outcome}),
+        el('details',null, el('summary',{text:'Explore the other paths'}), el('ul',{class:'other'}, others.map(function(x){return el('li',{html:'<b>'+escapeHtml(x.t)+'</b> — '+x.outcome});}))),
+        c.source?el('div',{class:'srcnote',html:'<b>What the course actually says:</b> '+c.source}):null);
+      finish(o.score, v[0], v[1], extra);
+    });
+    btns.push(b); box.appendChild(b);
+  });
+  body.appendChild(box);
+};
+
+/* ---------- REFLECT ---------- */
+R.reflect=function(c, body, finish){
+  if(c.context) body.appendChild(el('div',{class:'clue',html:c.context}));
+  body.appendChild(el('p',{class:'prompt',html:'<b>'+c.prompt+'</b>'}));
+  var min=c.minWords||25;
+  var ta=el('textarea',{id:'refl','aria-label':'Your reflection','aria-describedby':'reflcount'});
+  var cnt=el('div',{class:'count',id:'reflcount'});
+  var btn=el('button',{class:'btn',type:'button',disabled:true},'Submit reflection');
+  function words(){ var t=ta.value.trim(); return t?t.split(/\s+/).length:0; }
+  function upd(){ var w=words(); cnt.textContent=w+' words'+(w<min?(' · write at least '+min+' to submit'):' · ready to submit'); btn.disabled=w<min; }
+  ta.addEventListener('input',upd); upd();
+  body.appendChild(ta); body.appendChild(cnt);
+  btn.addEventListener('click',function(){
+    ta.readOnly=true; btn.disabled=true;
+    var extra=el('div',null,
+      el('p',{text:'Completion point awarded. Your answer is not machine-marked; use the model and checklist below to judge it yourself, or share it with your study group.'}),
+      el('div',{class:'model'}, el('b',{text:'Model response from the lesson'}), el('p',{html:c.model})),
+      c.checklist?el('div',null, el('p',{html:'<b>Did your answer…</b>'}), el('ul',{class:'plain'}, c.checklist.map(function(x){return el('li',{html:x});}))):null);
+    finish(1,'note','Reflection recorded', extra);
+  });
+  body.appendChild(el('div',{class:'actions'},btn));
+};
+
+/* ---------- RESULTS ---------- */
+function results(){
+  header();
+  var n=U.challenges.length, t=total(), pct=Math.round(t/n*100);
+  setBest(pct);
+  var rank=U.ranks.filter(function(r){return pct>=r.min;})[0]||U.ranks[U.ranks.length-1];
+  app.innerHTML='';
+  app.appendChild(hero());
+  var rows=U.challenges.map(function(c,i){return el('tr',null, el('td',{class:'n',text:String(i+1)}), el('td',null, el('span',{text:TYPES[c.type].icon+' '}), c.title), el('td',{class:'s',text:fmt(state.scores[i]||0)+' / 1'}));});
+  app.appendChild(el('main',null, el('div',{class:'wrap'},
+    el('section',{class:'card mission'},
+      el('div',{class:'kicker',style:'color:var(--muted)',text:'Mission complete'}),
+      el('div',{class:'score-big',text:pct+'%'}),
+      el('p',{style:'margin:.2em 0 0',text:'You scored '+fmt(t)+' out of '+n+'.'}),
+      el('h2',{class:'rank',text:'🏅 '+rank.title}),
+      el('p',{text:rank.desc}),
+      el('div',{class:'actions'},
+        el('button',{class:'btn',id:'replay',onclick:function(){ intro(); go(0); }},'↻ Play again (reshuffled)'),
+        el('a',{class:'btn ghost',href:'index.html'},'⌂ Back to all units'),
+        U.next?el('a',{class:'btn ghost',href:U.next.href},U.next.label+' →'):null)),
+    el('section',{class:'card'}, el('h3',{text:'Your challenge record'}), el('table',{class:'res'}, el('tbody',null,rows))),
+    U.closing?el('section',{class:'card'}, el('h3',{text:'Carry this forward'}), el('p',{html:U.closing})):null
+  )));
+  window.scrollTo(0,0);
+}
+
+document.title = 'Unit '+U.roman+': '+U.title+' · Johannine Writings';
+intro();
+window.__game={go:go,intro:intro,state:function(){return state;}};
+})();
+</script>
+</body>
+</html>

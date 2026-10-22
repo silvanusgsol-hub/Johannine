@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Johannine Writings Games</title>
+<meta name="description" content="Six interactive review games for the Johannine Writings course (Master of Divinity, Global School of Open Learning), one for each unit.">
+<style>
+:root{--paper:#f7f3ea;--card:#fff;--ink:#1d1a15;--muted:#5d564b;--line:#e2dacb;--gold:#b8892b;--navy:#131a33;--focus:#1a5fd0}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--paper:#12110e;--card:#1d1b17;--ink:#f1ebe0;--muted:#b6ad9e;--line:#38332b;--gold:#e2b75a;--focus:#8ab4ff}}
+:root[data-theme="dark"]{--paper:#12110e;--card:#1d1b17;--ink:#f1ebe0;--muted:#b6ad9e;--line:#38332b;--gold:#e2b75a;--focus:#8ab4ff}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans",sans-serif}
+h1,h2,.serif{font-family:"Iowan Old Style","Palatino Linotype",Palatino,"Book Antiqua",Georgia,serif;line-height:1.2}
+:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+header.hero{background:radial-gradient(circle at 85% 10%,#2a3a74,transparent 55%),linear-gradient(160deg,#131a33,#0b0f1f);color:#f8f1e1;position:relative;overflow:hidden}
+header.hero::after{content:"";position:absolute;inset:0;background:repeating-radial-gradient(circle at 90% 120%,transparent 0 40px,rgba(226,183,90,.07) 40px 42px);pointer-events:none}
+header.hero .wrap{position:relative;z-index:1;padding-top:56px;padding-bottom:56px}
+.kicker{text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:700;color:#e2b75a}
+header h1{font-size:clamp(34px,7vw,60px);margin:.2em 0 .25em}
+header p{max-width:680px;font-size:18px;margin:0 0 .6em;opacity:.92}
+.verse{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-style:italic;opacity:.85;margin-top:18px!important}
+main{padding:28px 0 56px}
+.how{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:26px}
+.how div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px;font-size:15px}
+.how b{display:block;font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:17px;margin-bottom:2px}
+@media (max-width:760px){.how{grid-template-columns:1fr}}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:760px){.grid{grid-template-columns:1fr}}
+a.unit{display:flex;gap:0;text-decoration:none;color:inherit;background:var(--card);border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:transform .15s ease,box-shadow .15s ease}
+a.unit:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.08);border-color:var(--c)}
+.num{flex:none;width:76px;display:flex;align-items:flex-start;justify-content:center;padding-top:18px;background:var(--c);color:#fff;font-family:Georgia,serif;font-size:30px;font-weight:700}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .num{background:var(--cd);color:#111}}
+.ubody{padding:16px 18px 14px;flex:1;min-width:0;display:flex;flex-direction:column}
+.uk{font-size:12px;text-transform:uppercase;letter-spacing:.08em;font-weight:700;color:var(--muted)}
+.unit h2{font-size:25px;margin:.2em 0 .25em}
+.unit p{margin:0 0 10px;color:var(--muted);font-size:15px}
+ul.ls{list-style:none;padding:0;margin:0 0 12px;font-size:14px}
+ul.ls li{padding:3px 0}
+ul.ls span{display:inline-block;font-weight:700;margin-right:6px;color:var(--ink)}
+.foot{margin-top:auto;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;font-size:13px;color:var(--muted);border-top:1px dashed var(--line);padding-top:10px}
+.best:empty{display:none}
+.best{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:2px 10px;color:var(--ink)}
+.go{margin-left:auto;font-weight:700;color:var(--c);font-size:15px}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .go{color:var(--cd)}}
+section.types{margin-top:30px;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+section.types h2{margin:0 0 8px;font-size:22px}
+.tl{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 22px;padding:0;margin:0;list-style:none;font-size:15px}
+@media (max-width:640px){.tl{grid-template-columns:1fr}}
+footer{color:var(--muted);font-size:13px;text-align:center;padding:0 16px 32px}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">Global School of Open Learning · Master of Divinity</div>
+    <h1>Johannine Writings: The Games</h1>
+    <p>Six review games, one for each unit of the course: the Fourth Gospel from its background to the empty tomb, and the three Letters of John. Play a unit after you finish its two lessons.</p>
+    <p class="verse">“These are written that you may believe that Jesus is the Messiah, the Son of God, and that by believing you may have life in his name.” John 20:31</p>
+  </div>
+</header>
+<main>
+  <div class="wrap">
+    <div class="how" aria-label="How to play">
+      <div><b>1 · Choose a unit</b>Each game covers the two lessons of one unit, in the course’s own words and order.</div>
+      <div><b>2 · Complete 13–15 challenges</b>Sequence, match, sort, unlock scrolls, choose paths and reflect, with feedback after every answer.</div>
+      <div><b>3 · Earn your rank</b>See your score and rank at the end, then replay with every answer reshuffled.</div>
+    </div>
+    <div class="grid">
+    <a class="unit" href="unit_1.html" style="--c:#8a4b10;--cd:#f0a95a" aria-label="Unit I game: The Beloved Disciple Files">
+      <div class="num" aria-hidden="true">I</div>
+      <div class="ubody">
+        <div class="uk">Unit I · Introduction to the Fourth Gospel</div>
+        <h2>The Beloved Disciple Files</h2>
+        <p>Who wrote the Fourth Gospel, when, for whom and why, and what kind of book did he write?</p>
+        <ul class="ls"><li><span>Lesson 1</span> Background of the Fourth Gospel</li><li><span>Lesson 2</span> The Johannine Literature</li></ul>
+        <div class="foot"><span>13 challenges · 8 activity types</span><span class="best" data-unit="1"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    <a class="unit" href="unit_2.html" style="--c:#3b3a9e;--cd:#a9a6ff" aria-label="Unit II game: The Seven Lamps">
+      <div class="num" aria-hidden="true">II</div>
+      <div class="ubody">
+        <div class="uk">Unit II · Johannine Theology</div>
+        <h2>The Seven Lamps</h2>
+        <p>Trace the great themes of John’s Gospel and answer its central question: who is Jesus?</p>
+        <ul class="ls"><li><span>Lesson 3</span> Major Theological Themes</li><li><span>Lesson 4</span> Christology</li></ul>
+        <div class="foot"><span>15 challenges · 8 activity types</span><span class="best" data-unit="2"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    <a class="unit" href="unit_3.html" style="--c:#7a1f3d;--cd:#f08bb0" aria-label="Unit III game: The Foyer and the Feast">
+      <div class="num" aria-hidden="true">III</div>
+      <div class="ubody">
+        <div class="uk">Unit III · The Prologue and Inaugural Signs</div>
+        <h2>The Foyer and the Feast</h2>
+        <p>Step through the prologue’s doorway (1:1–18), then follow the first signs from Cana to Cana.</p>
+        <ul class="ls"><li><span>Lesson 5</span> The Prologue (1:1–18)</li><li><span>Lesson 6</span> Inaugural Signs (1:19–4:54)</li></ul>
+        <div class="foot"><span>14 challenges · 8 activity types</span><span class="best" data-unit="3"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    <a class="unit" href="unit_4.html" style="--c:#a3431c;--cd:#ff9a6b" aria-label="Unit IV game: Signs on Trial">
+      <div class="num" aria-hidden="true">IV</div>
+      <div class="ubody">
+        <div class="uk">Unit IV · Signs and Conflict (5–12:50)</div>
+        <h2>Signs on Trial</h2>
+        <p>Follow Jesus through John 5–12, where every sign meets a response and the world itself is on trial.</p>
+        <ul class="ls"><li><span>Lesson 7</span> Signs amid Mounting Controversy (5–10)</li><li><span>Lesson 8</span> The Climactic Sign and Conclusion (11:1–12:19)</li></ul>
+        <div class="foot"><span>14 challenges · 8 activity types</span><span class="best" data-unit="4"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    <a class="unit" href="unit_5.html" style="--c:#6b2a7a;--cd:#d9a6ff" aria-label="Unit V game: The Towel and the Empty Tomb">
+      <div class="num" aria-hidden="true">V</div>
+      <div class="ubody">
+        <div class="uk">Unit V · Jesus’ Passion and Preparation of the New Covenant Community</div>
+        <h2>The Towel and the Empty Tomb</h2>
+        <p>From the upper room to the garden tomb: Jesus prepares his community, goes to the cross as king, rises and sends his disciples.</p>
+        <ul class="ls"><li><span>Lesson 9</span> The Cleansing and Instruction of the New Covenant Community (13–17)</li><li><span>Lesson 10</span> The Passion Narrative, the Resurrection Appearances, the Commissioning of Jesus’s Disciples and Conclusion (18–20)</li></ul>
+        <div class="foot"><span>13 challenges · 8 activity types</span><span class="best" data-unit="5"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    <a class="unit" href="unit_6.html" style="--c:#1f4e79;--cd:#8fc3ff" aria-label="Unit VI game: Letters from the Elder">
+      <div class="num" aria-hidden="true">VI</div>
+      <div class="ubody">
+        <div class="uk">Unit VI · Johannine Epistles</div>
+        <h2>Letters from the Elder</h2>
+        <p>Open the three letters of John: a church shaken by false teaching, a warning to the elect lady, and a dispute over hospitality.</p>
+        <ul class="ls"><li><span>Lesson 11</span> 1 John</li><li><span>Lesson 12</span> II and III John</li></ul>
+        <div class="foot"><span>13 challenges · 8 activity types</span><span class="best" data-unit="6"></span><span class="go">Play &rarr;</span></div>
+      </div>
+    </a>
+    </div>
+    <section class="types" aria-labelledby="types-h">
+      <h2 id="types-h">The activity types</h2>
+      <ul class="tl">
+        <li>🔍 <b>Narrative Detective</b>: read a clue and identify the point it proves.</li>
+        <li>⇅ <b>Story Sequencer</b>: put events, scenes or sayings in order.</li>
+        <li>⇄ <b>Theme &amp; Character Matcher</b>: pair characters, sayings and meanings.</li>
+        <li>🗂 <b>Arrange the Evidence</b>: sort clues into categories.</li>
+        <li>🛤 <b>Choose Your Path</b>: respond to a church situation and see the consequence.</li>
+        <li>📜 <b>Unlock the Scroll</b>: type the missing word; close variants are accepted.</li>
+        <li>🏛 <b>Build the Story</b>: rebuild an outline, chiasm or map slot by slot.</li>
+        <li>✍ <b>Reflection Challenge</b>: write your answer, then compare it with a model.</li>
+      </ul>
+    </section>
+  </div>
+</main>
+<footer>82 challenges in all. Content is drawn from the Johannine Writings course guide (Joe Thomas, Global School of Open Learning). Your best score for each unit is saved in this browser only.</footer>
+<script>
+(function(){
+  document.querySelectorAll('.best').forEach(function(s){
+    try{ var v=localStorage.getItem('jw-games-unit-'+s.getAttribute('data-unit')+'-best');
+      if(v){ var b=JSON.parse(v); s.textContent='Best: '+b.pct+'%'; } }catch(e){}
+  });
+})();
+</script>
+</body>
+</html>
